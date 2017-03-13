@@ -1,14 +1,19 @@
----
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-12-18 21:45:10 +0800
-tags:
-  - Mailbox
-  - Theme
-categories:
-  - Theme
-  - Jekyll Writer
----
-It's a long time question for me, what default theme of Jekyll Writer looks like? Days ago, Mailbox had gone. Today I copied the design of [Mailbox official blog](https://blogs.dropbox.com/mailbox/) for our default theme to remember this great app. Thanks Mailbox team.
 
-This theme is published under MIT License, I hope you may like it =)
+<div class="wrapper">
+  <center> <a href="{{ '/' | prepend: site.baseurl }}"><div class="site-title">   {{site.title}} </div></a></center>
+</div>
+<div class="wrapper site-description">
+<center>  {{site.description}} </center>
+</div>
+<div class="wrapper">
+  <div class="trigger site-navigation">
+    <a class="page-link" href="{{ '/' | prepend: site.baseurl }}">HOME</a><span class="exclamationMark">/</span>
+
+    {% for sitePage in site.pages %}
+    {% if sitePage.title %}
+
+    <a class="page-link" href="{{ sitePage.url | prepend: site.baseurl }}">{{sitePage.title}}</a><span class="exclamationMark">/</span>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,14 +1,40 @@
----
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-12-18 21:45:10 +0800
-tags:
-  - Mailbox
-  - Theme
-categories:
-  - Theme
-  - Jekyll Writer
----
-It's a long time question for me, what default theme of Jekyll Writer looks like? Days ago, Mailbox had gone. Today I copied the design of [Mailbox official blog](https://blogs.dropbox.com/mailbox/) for our default theme to remember this great app. Thanks Mailbox team.
+<footer class="site-footer">
 
-This theme is published under MIT License, I hope you may like it =)
+  <div class="wrapper">
+
+    <h2 class="footer-heading small-site-title">{{ site.title }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list footer-content">
+          <li>Powered By Gravity</li>
+          <li>Made with <i class="fa fa-heart"></i> on <a href="http://jekyllrb.com/"><span style="color:black">{ { Jekyll } }</a></span></li>
+
+
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2 footer-content">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3 site-description">
+        <p>{{ site.description }}</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>

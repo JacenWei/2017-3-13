@@ -1,14 +1,24 @@
 ---
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-12-18 21:45:10 +0800
-tags:
-  - Mailbox
-  - Theme
-categories:
-  - Theme
-  - Jekyll Writer
+layout: default
 ---
-It's a long time question for me, what default theme of Jekyll Writer looks like? Days ago, Mailbox had gone. Today I copied the design of [Mailbox official blog](https://blogs.dropbox.com/mailbox/) for our default theme to remember this great app. Thanks Mailbox team.
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-This theme is published under MIT License, I hope you may like it =)
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline"><a class="post-title-link"  href="{{page.url}}">{{ page.title }}</a></h1>
+  <center>  <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+    {% if page.author %}
+     <div class="">
+       <center><p ><strong><span class="authorKeyword">Author</span><span class="small-site-title"> <h2 style="letter-spacing: 3px !important;
+       text-transform: uppercase !important;">{{page.author}}</h2></span></strong></p></center>
+
+     </div>
+     {% endif %}
+   </center>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+
+</article>
